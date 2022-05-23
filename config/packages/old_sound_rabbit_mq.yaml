@@ -1,0 +1,16 @@
+old_sound_rabbit_mq:
+  connections:
+    default:
+      url: '%env(RABBITMQ_URL)%'
+  producers:
+    # use 'old_sound_rabbit_mq.task_producer' service to send data.
+    # old_sound_rabbit_mq.example_for_concurrent_consumers_producer
+    example_for_concurrent_consumers:
+      connection: default
+      exchange_options: { name: 'example_for_concurrent_consumers', type: 'topic' }
+  consumers:
+    example_for_concurrent_consumers:
+      connection: default
+      exchange_options: { name: 'example_for_concurrent_consumers', type: 'topic' }
+      queue_options: { name: 'example_for_concurrent_consumers' }
+      callback: 'acme.interested_in_something_happening_consumer'

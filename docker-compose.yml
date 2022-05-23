@@ -1,0 +1,65 @@
+version: '3'
+services:
+  database:
+    image: postgres:${POSTGRES_VERSION:-14}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
+      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+    ports:
+      - 5432:5432
+    volumes:
+      #      - db-data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      - ./docker/db/data:/var/lib/postgresql/data:rw
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./docker/rabbitmq-data/:/var/lib/rabbitmq/
+      - ./docker/rabbitmq-log/:/var/log/rabbitmq
+#  redpanda:
+#    # NOTE: Please use the latest version here!
+#    image: vectorized/redpanda:v22.1.3
+#    container_name: redpanda-1
+#    command:
+#      - redpanda
+#      - start
+#      - --smp
+#      - '1'
+#      - --reserve-memory
+#      - 0M
+#      - --overprovisioned
+#      - --node-id
+#      - '0'
+#      - --kafka-addr
+#      - PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
+#      - --advertise-kafka-addr
+#      - PLAINTEXT://redpanda:29092,OUTSIDE://localhost:9092
+#      - --pandaproxy-addr
+#      - PLAINTEXT://0.0.0.0:28082,OUTSIDE://0.0.0.0:8082
+#      - --advertise-pandaproxy-addr
+#      - PLAINTEXT://redpanda:28082,OUTSIDE://localhost:8082
+#    ports:
+#      - 8081:8081
+#      - 8082:8082
+#      - 9092:9092
+#      - 28082:28082
+#      - 29092:29092
+#  kafdrop:
+#    image: obsidiandynamics/kafdrop:3.30.0
+#    restart: "always"
+#    ports:
+#      - "9000:9000"
+#    environment:
+#      KAFKA_BROKERCONNECT: "redpanda:29092"
+#      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+#    depends_on:
+#      - "redpanda"
+
+#volumes:
+#  redpanda-kafka:

@@ -1,0 +1,51 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: false      # Automatically injects dependencies in your services.
+        autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\Controller\:
+        autowire: true
+        autoconfigure: true
+        resource: '../src/Controller/'
+    App\Console\:
+        autowire: true
+        autoconfigure: true
+        resource: '../src/Console/'
+
+    infrastructure.eventsauce_serializer:
+      class: EventSauce\EventSourcing\Serialization\ConstructingMessageSerializer
+
+    infrastructure.rabbitmq_factory:
+      class: App\Infrastructure\RabbitMQServiceFactory
+      arguments:
+        $serializer: '@infrastructure.eventsauce_serializer'
+
+    acme.interested_in_something_happening_consumer:
+      class: App\Infrastructure\RabbitMQMessageRelay
+      factory: ['@infrastructure.rabbitmq_factory', 'messageRelay']
+      arguments:
+        - !service
+          class: App\AcmeCorp\InterestedInSomethingHappening
+          arguments:
+            - '@monolog.logger.console'
+
+    App\AcmeCorp\AcmeService:
+      class: App\AcmeCorp\AcmeService
+      arguments:
+        - !service
+          factory: ['@infrastructure.rabbitmq_factory', 'eventDispatcher']
+          arguments:
+            - '@old_sound_rabbit_mq.example_for_concurrent_consumers_producer'
+
+
+
