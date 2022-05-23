@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c6ae03c4c092e4dbb290b963e884744",
+    "content-hash": "62315b00c4981b5ee28b9ae0eb197b7d",
     "packages": [
         {
             "name": "brick/math",
@@ -1721,6 +1721,58 @@
             "description": "Message Outbox foundation for EventSauce",
             "support": {
                 "source": "https://github.com/EventSaucePHP/MessageOutbox/tree/0.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-04-09T07:39:26+00:00"
+        },
+        {
+            "name": "eventsauce/message-outbox-for-doctrine",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EventSaucePHP/MessageOutboxForDoctrine.git",
+                "reference": "d2bdedcfd9894fc34e3861e7d0b53ea0cf9d893f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EventSaucePHP/MessageOutboxForDoctrine/zipball/d2bdedcfd9894fc34e3861e7d0b53ea0cf9d893f",
+                "reference": "d2bdedcfd9894fc34e3861e7d0b53ea0cf9d893f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^3.1",
+                "eventsauce/eventsauce": "^1.0||^2.0",
+                "eventsauce/message-outbox": "^0.1||^0.2||^0.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EventSauce\\MessageOutbox\\DoctrineOutbox\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Message Outbox Pattern implementation for Doctrine DBAL 3",
+            "support": {
+                "source": "https://github.com/EventSaucePHP/MessageOutboxForDoctrine/tree/0.3.1"
             },
             "funding": [
                 {
@@ -10572,7 +10624,8 @@
     "platform": {
         "php": ">=8.0.2",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-pcntl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

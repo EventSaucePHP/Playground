@@ -1,5 +1,23 @@
 version: '3'
 services:
+  nginx:
+    image: playground-nginx:${PLATGROUND_APP_VERSION:-latest}
+    build:
+      context: ./
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - 8080:80
+
+  application:
+    image: playground-application:${PLATGROUND_APP_VERSION:-latest}
+    build:
+      dockerfile: docker/php/Dockerfile
+      context: ./
+    volumes:
+      - ./:/var/www/application/
+      - /var/www/application/var/
+      - /var/www/application/docker/
+
   database:
     image: postgres:${POSTGRES_VERSION:-14}-alpine
     environment:
@@ -12,7 +30,7 @@ services:
     volumes:
       #      - db-data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      - ./docker/db/data:/var/lib/postgresql/data:rw
+      - ./docker/data/db/data:/var/lib/postgresql/data:rw
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'
@@ -20,8 +38,8 @@ services:
       - 5672:5672
       - 15672:15672
     volumes:
-      - ./docker/rabbitmq-data/:/var/lib/rabbitmq/
-      - ./docker/rabbitmq-log/:/var/log/rabbitmq
+      - ./docker/data/rabbitmq-data/:/var/lib/rabbitmq/
+      - ./docker/data/rabbitmq-log/:/var/log/rabbitmq
 #  redpanda:
 #    # NOTE: Please use the latest version here!
 #    image: vectorized/redpanda:v22.1.3

@@ -92,6 +92,9 @@
     "eventsauce/message-outbox": {
         "version": "0.3.1"
     },
+    "eventsauce/message-outbox-for-doctrine": {
+        "version": "0.3.1"
+    },
     "eventsauce/message-repository-for-doctrine": {
         "version": "0.3.1"
     },

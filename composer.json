@@ -7,6 +7,7 @@
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-pcntl": "*",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
@@ -14,6 +15,7 @@
         "eventsauce/clock": "^1.0",
         "eventsauce/eventsauce": "^2.1",
         "eventsauce/message-outbox": "^0.3.1",
+        "eventsauce/message-outbox-for-doctrine": "^0.3.1",
         "eventsauce/message-repository-for-doctrine": "^0.3.1",
         "php-amqplib/rabbitmq-bundle": "^2.11",
         "phpdocumentor/reflection-docblock": "^5.3",
@@ -49,8 +51,7 @@
         "symfony/webapp-meta": "^1.0",
         "symfony/yaml": "6.0.*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0",
-        "ext-pcntl": "*"
+        "twig/twig": "^2.12|^3.0"
     },
     "config": {
         "allow-plugins": {
