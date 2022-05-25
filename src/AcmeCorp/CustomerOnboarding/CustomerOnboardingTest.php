@@ -30,7 +30,7 @@ class CustomerOnboardingTest extends AggregateRootTestCase
         $this->personalInformationVetting = new InMemoryPersonalInformationVetting();
     }
 
-    protected function handle(object $command)
+    protected function handle(CustomerOnboardingCommand $command)
     {
         $service = new CustomerOnboardingService(
             $this->clock(),
