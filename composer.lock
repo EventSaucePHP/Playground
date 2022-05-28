@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62315b00c4981b5ee28b9ae0eb197b7d",
+    "content-hash": "d1113d50e225baa6ab271d42349c26fc",
     "packages": [
         {
             "name": "brick/math",
@@ -1616,16 +1616,16 @@
         },
         {
             "name": "eventsauce/eventsauce",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/EventSauce.git",
-                "reference": "c5e49c81f7b03899f016a625577c5cb7adc64e5a"
+                "reference": "772f0c3f969c8428daff3acc2d46ecb085aa5677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/EventSauce/zipball/c5e49c81f7b03899f016a625577c5cb7adc64e5a",
-                "reference": "c5e49c81f7b03899f016a625577c5cb7adc64e5a",
+                "url": "https://api.github.com/repos/EventSaucePHP/EventSauce/zipball/772f0c3f969c8428daff3acc2d46ecb085aa5677",
+                "reference": "772f0c3f969c8428daff3acc2d46ecb085aa5677",
                 "shasum": ""
             },
             "require": {
@@ -1669,7 +1669,7 @@
             "description": "A pragmatic event sourcing library for PHP with a focus on developer experience.",
             "support": {
                 "issues": "https://github.com/EventSaucePHP/EventSauce/issues",
-                "source": "https://github.com/EventSaucePHP/EventSauce/tree/2.1.0"
+                "source": "https://github.com/EventSaucePHP/EventSauce/tree/2.2.1"
             },
             "funding": [
                 {
@@ -1677,7 +1677,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-16T12:18:23+00:00"
+            "time": "2022-05-28T13:47:13+00:00"
         },
         {
             "name": "eventsauce/message-outbox",
@@ -1882,6 +1882,69 @@
                 }
             ],
             "time": "2022-04-09T07:39:26+00:00"
+        },
+        {
+            "name": "eventsauce/object-hydrator",
+            "version": "dev-feature/object-serializer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
+                "reference": "764aa21dc4d3c494fdb14eca99918809d34e30be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/764aa21dc4d3c494fdb14eca99918809d34e30be",
+                "reference": "764aa21dc4d3c494fdb14eca99918809d34e30be",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "league/construct-finder": "^1.1",
+                "phpbench/phpbench": "^1.2",
+                "phpunit/phpunit": "^9.5.11",
+                "ramsey/uuid": "^4.2"
+            },
+            "suggest": {
+                "league/construct-finder": "Find all classes in a directory for the best dumped hydrators."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EventSauce\\ObjectHydrator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Converts structured data into strict objects.",
+            "keywords": [
+                "construction",
+                "constructor",
+                "hydration",
+                "mapper"
+            ],
+            "support": {
+                "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/feature/object-serializer"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-28T12:59:16+00:00"
         },
         {
             "name": "eventsauce/uuid-encoding",
@@ -8589,16 +8652,16 @@
     "packages-dev": [
         {
             "name": "eventsauce/test-utilities",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/TestUtilities.git",
-                "reference": "a25e2a8170ae701793edd4d5ed401c6642a09c91"
+                "reference": "383745146069bc11c02a7c61256bbedf54c320fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/TestUtilities/zipball/a25e2a8170ae701793edd4d5ed401c6642a09c91",
-                "reference": "a25e2a8170ae701793edd4d5ed401c6642a09c91",
+                "url": "https://api.github.com/repos/EventSaucePHP/TestUtilities/zipball/383745146069bc11c02a7c61256bbedf54c320fb",
+                "reference": "383745146069bc11c02a7c61256bbedf54c320fb",
                 "shasum": ""
             },
             "require": {
@@ -8629,7 +8692,7 @@
             ],
             "description": "Test utilities for EventSauce.",
             "support": {
-                "source": "https://github.com/EventSaucePHP/TestUtilities/tree/2.1.0"
+                "source": "https://github.com/EventSaucePHP/TestUtilities/tree/2.2.1"
             },
             "funding": [
                 {
@@ -8637,7 +8700,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-16T12:18:23+00:00"
+            "time": "2022-05-28T13:46:42+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -10618,7 +10681,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "eventsauce/object-hydrator": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

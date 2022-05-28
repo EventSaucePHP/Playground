@@ -5,12 +5,24 @@ declare(strict_types=1);
 namespace App\AcmeCorp\CustomerOnboarding;
 
 use App\AcmeCorp\CustomerOnboarding\VettingPersonalInformation\InMemoryPersonalInformationVetting;
+use App\Infrastructure\AwesomePayloadSerialization;
 use EventSauce\EventSourcing\AggregateRootId;
+use EventSauce\EventSourcing\Serialization\PayloadSerializer;
 use EventSauce\EventSourcing\TestUtilities\AggregateRootTestCase;
+use EventSauce\ObjectHydrator\ObjectHydrator;
+use EventSauce\ObjectHydrator\ObjectSerializerUsingReflection;
 
 class CustomerOnboardingTest extends AggregateRootTestCase
 {
     private InMemoryPersonalInformationVetting $personalInformationVetting;
+
+    protected function payloadSerializer(): PayloadSerializer
+    {
+        return new AwesomePayloadSerialization(
+            new ObjectSerializerUsingReflection(),
+            new ObjectHydrator(),
+        );
+    }
 
     protected function newAggregateRootId(): AggregateRootId
     {

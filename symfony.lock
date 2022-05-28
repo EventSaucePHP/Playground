@@ -101,6 +101,9 @@
     "eventsauce/message-repository-table-schema": {
         "version": "0.3.1"
     },
+    "eventsauce/object-hydrator": {
+        "version": "dev-feature/object-serializer"
+    },
     "eventsauce/test-utilities": {
         "version": "2.1.0"
     },
