@@ -8,7 +8,7 @@ use EventSauce\EventSourcing\Serialization\PayloadSerializer;
 use EventSauce\ObjectHydrator\ObjectHydrator;
 use EventSauce\ObjectHydrator\ObjectSerializer;
 
-class ObjectHydratorloadSerialization implements PayloadSerializer
+class ObjectHydratorPayloadSerialization implements PayloadSerializer
 {
     public function __construct(
         private ObjectSerializer $serializer,

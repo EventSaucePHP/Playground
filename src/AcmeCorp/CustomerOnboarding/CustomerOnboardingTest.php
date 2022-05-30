@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\AcmeCorp\CustomerOnboarding;
 
 use App\AcmeCorp\CustomerOnboarding\VettingPersonalInformation\InMemoryPersonalInformationVetting;
-use App\Infrastructure\ObjectHydratorloadSerialization;
+use App\Infrastructure\ObjectHydratorPayloadSerialization;
 use EventSauce\EventSourcing\AggregateRootId;
 use EventSauce\EventSourcing\Serialization\PayloadSerializer;
 use EventSauce\EventSourcing\TestUtilities\AggregateRootTestCase;
@@ -18,7 +18,7 @@ class CustomerOnboardingTest extends AggregateRootTestCase
 
     protected function payloadSerializer(): PayloadSerializer
     {
-        return new ObjectHydratorloadSerialization(
+        return new ObjectHydratorPayloadSerialization(
             new ObjectSerializerUsingReflection(),
             new ObjectHydrator(),
         );
