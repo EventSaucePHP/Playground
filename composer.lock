@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d693710def0b5f0a91d4e16734623ca",
+    "content-hash": "90303da187a2d7a762cfaabf6838883f",
     "packages": [
         {
             "name": "brick/math",
@@ -1885,16 +1885,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "dev-feature/object-serializer",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "22acc4edbe235928e8f10cb181b4dce2af701697"
+                "reference": "5b745cdc0896cb674cfb7c005d3156bb93d98efb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/22acc4edbe235928e8f10cb181b4dce2af701697",
-                "reference": "22acc4edbe235928e8f10cb181b4dce2af701697",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/5b745cdc0896cb674cfb7c005d3156bb93d98efb",
+                "reference": "5b745cdc0896cb674cfb7c005d3156bb93d98efb",
                 "shasum": ""
             },
             "require": {
@@ -1936,7 +1936,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/feature/object-serializer"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/0.4.0"
             },
             "funding": [
                 {
@@ -1944,7 +1944,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-30T07:52:14+00:00"
+            "time": "2022-06-05T10:26:06+00:00"
         },
         {
             "name": "eventsauce/uuid-encoding",
@@ -10690,9 +10690,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "eventsauce/object-hydrator": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
